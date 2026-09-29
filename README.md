@@ -9,7 +9,7 @@ This project implements real-time clock behavior using `millis()` instead of an 
 
 Watch the clock in action — running mode, setting the time, and the escalating 3-tone alarm:
 
-https://github.com/user-attachments/assets/PENDING
+https://github.com/user-attachments/assets/867163c2-525e-4efa-aa58-76ae71a50ead
 
 📥 [Download the demo video (MP4, ~9 MB)](media/demo.mp4) — also committed in this repo as `media/demo.mp4`.
 
