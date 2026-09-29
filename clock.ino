@@ -141,6 +141,26 @@ bool checkButton(int pin, bool &wasPressed, unsigned long &pressStartTime, unsig
 
 // ---------------------- ALARM FUNCTIONS ----------------------
 
+void alarmTone() {
+  static unsigned long lastChange = 0;
+  static byte state = 0;
+
+  unsigned long now = millis();
+  if (now - lastChange >= 200) {     // Chnage every 200ms
+    lastChange = now;
+    state = (state + 1) % 3;
+
+    if (state ==0) {
+      tone(buzzerPin, 1000);
+    } else if (state == 1) {
+      tone(buzzerPin, 1500);
+    } else if (state == 2) {
+      tone(buzzerPin, 2000);
+    }
+  }
+
+}
+
 void checkAlarm() {
   if (!alarmEnabled || alarmActive) return;
 
@@ -189,10 +209,7 @@ void handleAlarm() {
     return;
   }
   
-  // Beeping pattern ( beep for 0.5s, pause for 0.5s)
-  if ((currentMillis / 500) % 2 == 0) {
-    tone(buzzerPin, 2000);     // 2KHz tone
-  } else noTone(buzzerPin);
+  alarmTone();
 }
 
 void alarmSet() {

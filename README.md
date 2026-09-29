@@ -5,6 +5,51 @@ This project implements real-time clock behavior using `millis()` instead of an 
 
 ---
 
+## 📸 Demo
+
+Watch the clock in action — running mode, setting the time, and the escalating 3-tone alarm:
+
+https://github.com/user-attachments/assets/867163c2-525e-4efa-aa58-76ae71a50ead
+
+📥 [Download the demo video (MP4, ~9 MB)](media/demo.mp4) — also committed in this repo as `media/demo.mp4`.
+
+### 🖼️ Gallery
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="media/01-clock-front-dark.jpg" width="100%" alt="The clock display glowing brightly in a dark room"><br>
+      <sub><b>Reading the time in the dark</b> — the multiplexed 7-segment display stays perfectly readable with no backlight.</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="media/02-clock-front-angle.jpg" width="100%" alt="Angled view of the hand-made clock enclosure"><br>
+      <sub><b>The hand-made case</b> — a front / side view of the hand-built enclosure around the 4-digit display.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="media/03-buttons-side-panel.jpg" width="100%" alt="Side panel with the MODE, Increase and Alarm buttons"><br>
+      <sub><b>Control panel</b> — the labelled push buttons: <b>MODE</b>, <b>Increase</b> and <b>Alarm</b>.</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="media/04-inside-arduino.jpg" width="100%" alt="Arduino Uno board mounted inside the enclosure"><br>
+      <sub><b>Inside the case</b> — an Arduino Uno driving the 7-segment display module behind it.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="media/05-inside-wiring-battery.jpg" width="100%" alt="Battery pack and jumper wiring inside the clock"><br>
+      <sub><b>Power and wiring</b> — battery pack, segment driver wiring and the digit control transistor lines.</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="media/06-buzzer-battery-closeup.jpg" width="100%" alt="Close-up of the piezo buzzer and battery pack"><br>
+      <sub><b>Alarm hardware</b> — close-up of the piezo buzzer and the battery that powers the clock.</sub>
+    </td>
+  </tr>
+</table>
+
+---
+
 ## ✨ Features
 
 ### ⏱️ Timekeeping
@@ -18,7 +63,7 @@ This project implements real-time clock behavior using `millis()` instead of an 
 ### ⏰ Alarm System
 - Set custom alarm time (hours & minutes)
 - AM/PM-aware alarm triggering
-- Alarm rings with buzzer pattern
+- Escalating **3-tone buzzer pattern** (1 kHz → 1.5 kHz → 2 kHz, non-blocking)
 - Auto-stop after 60 seconds
 
 ---
@@ -125,9 +170,13 @@ This project implements real-time clock behavior using `millis()` instead of an 
 
 ---
 
-## 📸 Demo
+## 📂 Project Structure
 
-_Add images or videos of your project here_
+| Path | Description |
+|------|-------------|
+| [`clock.ino`](clock.ino) | Complete Arduino sketch — timekeeping, display multiplexing, button handling, alarm & snooze logic |
+| [`media/`](media) | Demo video (`demo.mp4`) and the photos used in this README |
+| [`LICENSE`](LICENSE) | MIT License |
 
 ---
 
